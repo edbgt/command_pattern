@@ -9,4 +9,12 @@ public class Complete implements Command {
     public void execute() {
         theTask.complete();
     }
+
+    public void undo() {
+        theTask.reopen();
+    }
+
+    public void redo() {
+        theTask.complete();
+    }
 }

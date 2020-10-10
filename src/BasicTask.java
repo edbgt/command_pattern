@@ -1,4 +1,4 @@
-public class BasicTask implements Task{
+public class BasicTask extends Task{
     //Receiver
     private boolean completed = false;
 
@@ -8,8 +8,8 @@ public class BasicTask implements Task{
         System.out.println("Basic Task has been completed");
     }
 
-    @Override
-    public void delete() {
-        System.out.println("Basic Task has been deleted");
+    public void reopen() {
+        completed = false;
+        System.out.println("Basic Task has been reopened");
     }
 }
