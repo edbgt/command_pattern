@@ -6,8 +6,8 @@ public class Main {
         List<Task> tasks = new ArrayList<>();
         Invoker theInvoker = new Invoker();
 
-        BasicTask basicTask1 = new BasicTask("Mit Benny programmieren");
-        BasicTask basicTask2 = new BasicTask("Aufhören zu Rauchen");
+        BasicTask basicTask1 = new BasicTask("Einkaufen");
+        BasicTask basicTask2 = new BasicTask("Fahrrad putzen");
 
         tasks.add(basicTask1);
         tasks.add(basicTask2);
