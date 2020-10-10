@@ -32,9 +32,8 @@ public class Invoker {
         System.out.println("ClickUndo counter: " + counter);
     }
 
-    public void ClickRedo() {
+    public void clickRedo() {
         theCommand.execute();
-        commandHistory.add(counter, theCommand);
         counter++;
         System.out.println("ClickRedo commandHistory: " + commandHistory);
         System.out.println("ClickRedo counter: " + counter);

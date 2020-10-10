@@ -1,25 +1,22 @@
 import java.util.List;
 
 public class Delete implements Command {
-    private List<Task> theTasks;
-    private Task theTask;
-    private int theIndex;
+    private final List<Task> theTasks;
+    private final Task theTask;
 
     public Delete(List<Task> newTasks, Task newTask) {
         theTasks = newTasks;
         theTask = newTask;
-        theIndex = newTasks.indexOf(theTask);
     }
 
     @Override
     public void execute() {
-        Task taskToDelete = theTasks.get(theIndex);
-        theTasks.remove(theIndex);
-        System.out.println(taskToDelete.toString() + " deleted");
+        theTasks.remove(theTask);
+        System.out.println(theTask.toString() + " deleted");
     }
 
-    //TODO load Task
     public void undo() {
+        theTasks.add(theTask);
         System.out.println("undo delete");
     }
 

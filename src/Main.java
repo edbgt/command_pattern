@@ -6,8 +6,8 @@ public class Main {
         List<Task> tasks = new ArrayList<>();
         Invoker theInvoker = new Invoker();
 
-        BasicTask basicTask1 = new BasicTask();
-        BasicTask basicTask2 = new BasicTask();
+        BasicTask basicTask1 = new BasicTask("Mit Benny programmieren");
+        BasicTask basicTask2 = new BasicTask("Aufhören zu Rauchen");
 
         tasks.add(basicTask1);
         tasks.add(basicTask2);
@@ -17,11 +17,21 @@ public class Main {
         theInvoker.setCommand(completeCommand);
         theInvoker.clickDo();
         theInvoker.clickUndo();
-        theInvoker.clickDo();
+        theInvoker.clickRedo();
 
         //delete basicTask2
         Delete deleteCommand = new Delete(tasks, basicTask2);
         theInvoker.setCommand(deleteCommand);
+        for(Task task : tasks) {
+            task.print();
+        }
         theInvoker.clickDo();
+        for(Task task : tasks) {
+            task.print();
+        }
+        theInvoker.clickUndo();
+        for(Task task : tasks) {
+            task.print();
+        }
     }
 }
